@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
     let titleLabel = UILabel()
     let subtitleLabel = UILabel()
     
