@@ -33,6 +33,10 @@ extension AccountSummaryViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        tableView.register(AccountSaummaryCell.self, forCellReuseIdentifier: AccountSaummaryCell.resuseID)
+        tableView.rowHeight = AccountSaummaryCell.rowHeight
+        tableView.tableFooterView = UIView()
+        
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         
@@ -57,8 +61,8 @@ extension AccountSummaryViewController {
 
 extension AccountSummaryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = games[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: AccountSaummaryCell.resuseID, for: indexPath) as! AccountSaummaryCell
+//        cell.typeLabel.text = r
         return cell
     }
     
