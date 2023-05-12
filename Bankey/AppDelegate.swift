@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         mainViewController.selectedIndex = 2
         
-        window?.rootViewController = mainViewController
+        window?.rootViewController = AccountSummaryViewController()
         window?.makeKeyAndVisible()
         return true
     }
