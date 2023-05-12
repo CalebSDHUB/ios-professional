@@ -9,12 +9,11 @@ import UIKit
 
 extension UIViewController {
     func setStatusBar() {
-        let windowScene = view.window?.windowScene
-        let statusBarSize = windowScene?.statusBarManager?.statusBarFrame.size
-        let frame = CGRect(origin: .zero, size: statusBarSize ?? CGSizeZero)
-        let statusbarView = UIView(frame: frame)
-        statusbarView.backgroundColor = appColor
-        view.addSubview(statusbarView)
+        let navBarAppearance = UINavigationBarAppearance()
+               navBarAppearance.configureWithTransparentBackground() // to hide Navigation Bar Line also
+               navBarAppearance.backgroundColor = appColor
+               UINavigationBar.appearance().standardAppearance = navBarAppearance
+               UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
     }
     
     func setTabBarImage(imageName: String, title: String) {
