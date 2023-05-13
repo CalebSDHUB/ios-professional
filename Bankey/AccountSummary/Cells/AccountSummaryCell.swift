@@ -7,7 +7,20 @@
 
 import UIKit
 
-final class AccountSaummaryCell: UITableViewCell {
+final class AccountSummaryCell: UITableViewCell {
+    enum AccountType: String {
+        case banking = "Banking"
+        case creditCard = "Credit card"
+        case investment = "Investment"
+    }
+    
+    struct ViewModel {
+        let accountType: AccountType
+        let accountName: String
+    }
+    
+    let viewModel: ViewModel? = nil
+    
     let typeLabel = UILabel()
     let nameLabel = UILabel()
     let underlineView = UIView()
@@ -33,7 +46,7 @@ final class AccountSaummaryCell: UITableViewCell {
 }
 
 // MARK: - UI
-extension AccountSaummaryCell {
+extension AccountSummaryCell {
     private func setup() {
         typeLabel.translatesAutoresizingMaskIntoConstraints = false
         typeLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
@@ -107,5 +120,24 @@ extension AccountSaummaryCell {
         rootString.append(centString)
         
         return rootString
+    }
+}
+
+extension AccountSummaryCell {
+    func configure(with vm: ViewModel) {
+        typeLabel.text = vm.accountType.rawValue
+        nameLabel.text = vm.accountName
+        
+        switch vm.accountType {
+        case .banking:
+            underlineView.backgroundColor = appColor
+            balanceLabel.text = "Current balance"
+        case .creditCard:
+            underlineView.backgroundColor = .systemOrange
+            balanceLabel.text = "Current balance"
+        case .investment:
+            underlineView.backgroundColor = .systemPurple
+            balanceLabel.text = "Value"
+        }
     }
 }
