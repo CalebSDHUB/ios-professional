@@ -171,11 +171,25 @@ extension LoginViewController {
     private func configureView(withMessage messge: String) {
         errorMessageLabel.isHidden = false
         errorMessageLabel.text = messge
+        shakeButton()
+    }
+    
+    private func shakeButton() {
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "position.x"
+        animation.values = [0, 10, -10, 10, 0] // Array of positions
+        animation.keyTimes = [0, 0.16, 0.5, 0.83, 1] // Array of times
+        animation.duration = 0.2
+
+        animation.isAdditive = true
+        signInButton.layer.add(animation, forKey: "shake")
     }
 }
 
 // MARK: - Animations
 extension LoginViewController {
+    
+    // Auto layout constaints animation
     private func animate() {
         let duration = 0.8
         let afterDelay = 0.2
