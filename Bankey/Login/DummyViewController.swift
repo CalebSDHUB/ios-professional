@@ -7,17 +7,13 @@
 
 import UIKit
 
-protocol LogoutDelegate: AnyObject {
-    func didLogout()
-}
-
 class DummyViewController: UIViewController {
     
     let stackView = UIStackView()
     let label = UILabel()
-    let loginButton = UIButton(type: .system)
+    let logoutButton = UIButton(type: .system)
     
-    weak var delegate: LogoutDelegate?
+    weak var logoutDelegate: LogoutDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +22,6 @@ class DummyViewController: UIViewController {
     }
 }
 
-// MARK: - UI
 extension DummyViewController {
     func style() {
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -37,15 +32,15 @@ extension DummyViewController {
         label.text = "Welcome"
         label.font = UIFont.preferredFont(forTextStyle: .title1)
         
-        loginButton.translatesAutoresizingMaskIntoConstraints = false
-        loginButton.configuration = .filled()
-        loginButton.setTitle("Logout", for: [])
-        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .primaryActionTriggered)
+        logoutButton.translatesAutoresizingMaskIntoConstraints = false
+        logoutButton.configuration = .filled()
+        logoutButton.setTitle("Logout", for: [])
+        logoutButton.addTarget(self, action: #selector(logoutButtonTapped), for: .primaryActionTriggered)
     }
     
     func layout() {
         stackView.addArrangedSubview(label)
-        stackView.addArrangedSubview(loginButton)
+        stackView.addArrangedSubview(logoutButton)
         
         view.addSubview(stackView)
         
@@ -54,11 +49,8 @@ extension DummyViewController {
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
     }
-}
-
-// MARK: - Actions
-extension DummyViewController {
-    @objc private func loginButtonTapped(sender: UIButton) {
-        delegate?.didLogout()
+    
+    @objc func logoutButtonTapped(sender: UIButton) {
+        logoutDelegate?.didLogout()
     }
 }

@@ -11,33 +11,31 @@ let appColor: UIColor = .systemTeal
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
     var window: UIWindow?
-    
     let loginViewController = LoginViewController()
-    let onboardingContainerViewController = OnboardingContainerViewController()
+    let onboardingViewController = OnboardingContainerViewController()
     let mainViewController = MainViewController()
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
-            fatalError("Could not get the window scene")
-        }
-        window = UIWindow(windowScene: windowScene)
+        
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
         
         loginViewController.delegate = self
-        onboardingContainerViewController.delegate = self
+        onboardingViewController.delegate = self
         
         registerForNotifications()
-        
-        displayLogin()
 
+        displayLogin()
         return true
     }
-}
-
-// MARK: - UI
-extension AppDelegate {
+    
+    private func registerForNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(didLogout), name: .logout, object: nil)
+    }
+    
     private func displayLogin() {
         setRootViewController(loginViewController)
     }
@@ -47,23 +45,17 @@ extension AppDelegate {
             prepMainView()
             setRootViewController(mainViewController)
         } else {
-            setRootViewController(onboardingContainerViewController)
+            setRootViewController(onboardingViewController)
         }
     }
     
     private func prepMainView() {
         mainViewController.setStatusBar()
-        
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().backgroundColor = appColor
     }
-    
-    private func registerForNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(didLogout), name: .logout, object: nil)
-    }
 }
 
-// MARK: - View controller transition
 extension AppDelegate {
     func setRootViewController(_ vc: UIViewController, animated: Bool = true) {
         guard animated, let window = self.window else {
@@ -82,7 +74,6 @@ extension AppDelegate {
     }
 }
 
-// MARK: - Delegates
 extension AppDelegate: LoginViewControllerDelegate {
     func didLogin() {
         displayNextScreen()
@@ -90,9 +81,10 @@ extension AppDelegate: LoginViewControllerDelegate {
 }
 
 extension AppDelegate: OnboardingContainerViewControllerDelegate {
-    func didFinishOnbooarding() {
+    func didFinishOnboarding() {
         LocalState.hasOnboarded = true
-        displayNextScreen()
+        prepMainView()
+        setRootViewController(mainViewController)
     }
 }
 

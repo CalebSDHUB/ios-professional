@@ -9,6 +9,6 @@ import Foundation
 
 extension Decimal {
     var doubleValue: Double {
-        NSDecimalNumber(decimal: self).doubleValue
+        return NSDecimalNumber(decimal:self).doubleValue
     }
 }

@@ -24,10 +24,14 @@
 		A5A5ADAD2A0EA7B900181467 /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A5ADAC2A0EA7B900181467 /* AccountSummaryCell.swift */; };
 		A5A5ADAF2A0F6A4F00181467 /* Decimal+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A5ADAE2A0F6A4F00181467 /* Decimal+Utils.swift */; };
 		A5A5ADB12A0F6BA800181467 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A5ADB02A0F6BA800181467 /* CurrencyFormatter.swift */; };
-		A5A5ADE02A10213300181467 /* CurrencyFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A5ADDF2A10213300181467 /* CurrencyFormatterTest.swift */; };
+		A5A5ADE02A10213300181467 /* CurrencyFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A5ADDF2A10213300181467 /* CurrencyFormatterTests.swift */; };
 		A5A5ADE22A1140E600181467 /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A5ADE12A1140E600181467 /* NSNotificationName.swift */; };
 		A5A5ADE42A1143EE00181467 /* UITextField+SecureToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A5ADE32A1143EE00181467 /* UITextField+SecureToggle.swift */; };
 		A5A5ADE72A11700000181467 /* ShakyBellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A5ADE62A11700000181467 /* ShakyBellView.swift */; };
+		A5A5ADE92A117E9400181467 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A5ADE82A117E9400181467 /* Date+Utils.swift */; };
+		A5A5ADEB2A117F5F00181467 /* AccountSummaryViewController+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A5ADEA2A117F5F00181467 /* AccountSummaryViewController+Networking.swift */; };
+		A5EA9A942A12C7960098B831 /* ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A932A12C7960098B831 /* ProfileTests.swift */; };
+		A5EA9A962A12C7BC0098B831 /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A952A12C7BC0098B831 /* AccountTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,10 +65,14 @@
 		A5A5ADAE2A0F6A4F00181467 /* Decimal+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Utils.swift"; sourceTree = "<group>"; };
 		A5A5ADB02A0F6BA800181467 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		A5A5ADD62A0F8AC000181467 /* BankeyUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankeyUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5A5ADDF2A10213300181467 /* CurrencyFormatterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTest.swift; sourceTree = "<group>"; };
+		A5A5ADDF2A10213300181467 /* CurrencyFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTests.swift; sourceTree = "<group>"; };
 		A5A5ADE12A1140E600181467 /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
 		A5A5ADE32A1143EE00181467 /* UITextField+SecureToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+SecureToggle.swift"; sourceTree = "<group>"; };
 		A5A5ADE62A11700000181467 /* ShakyBellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakyBellView.swift; sourceTree = "<group>"; };
+		A5A5ADE82A117E9400181467 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
+		A5A5ADEA2A117F5F00181467 /* AccountSummaryViewController+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSummaryViewController+Networking.swift"; sourceTree = "<group>"; };
+		A5EA9A932A12C7960098B831 /* ProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTests.swift; sourceTree = "<group>"; };
+		A5EA9A952A12C7BC0098B831 /* AccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +164,7 @@
 				A5A5AD9D2A0E218F00181467 /* LocalState.swift */,
 				A5A5ADB02A0F6BA800181467 /* CurrencyFormatter.swift */,
 				A5A5ADE12A1140E600181467 /* NSNotificationName.swift */,
+				A5A5ADE82A117E9400181467 /* Date+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -164,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				A5A5ADA42A0E53BC00181467 /* AccountSummaryViewController.swift */,
+				A5A5ADEA2A117F5F00181467 /* AccountSummaryViewController+Networking.swift */,
 				A5A5ADAA2A0EA74500181467 /* Header */,
 				A5A5ADAB2A0EA77F00181467 /* Cells */,
 			);
@@ -190,7 +200,9 @@
 		A5A5ADD72A0F8AC000181467 /* BankeyUnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				A5A5ADDF2A10213300181467 /* CurrencyFormatterTest.swift */,
+				A5EA9A922A12C76D0098B831 /* Utils */,
+				A5EA9A912A12C7610098B831 /* AccountSummary */,
+				A5A5ADDF2A10213300181467 /* CurrencyFormatterTests.swift */,
 			);
 			path = BankeyUnitTests;
 			sourceTree = "<group>";
@@ -201,6 +213,22 @@
 				A5A5ADE62A11700000181467 /* ShakyBellView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		A5EA9A912A12C7610098B831 /* AccountSummary */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AccountSummary;
+			sourceTree = "<group>";
+		};
+		A5EA9A922A12C76D0098B831 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A5EA9A932A12C7960098B831 /* ProfileTests.swift */,
+				A5EA9A952A12C7BC0098B831 /* AccountTests.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5A5ADAD2A0EA7B900181467 /* AccountSummaryCell.swift in Sources */,
+				A5A5ADE92A117E9400181467 /* Date+Utils.swift in Sources */,
 				A5A5ADE72A11700000181467 /* ShakyBellView.swift in Sources */,
 				A5A5ADA02A0E2EBF00181467 /* UIViewController+Utils.swift in Sources */,
 				A5A5AD942A0C4B7300181467 /* LoginView.swift in Sources */,
@@ -322,6 +351,7 @@
 				A5A5ADA52A0E53BC00181467 /* AccountSummaryViewController.swift in Sources */,
 				A5A5AD7D2A0C457600181467 /* AppDelegate.swift in Sources */,
 				A5A5AD972A0CF48600181467 /* OnboardingContainerViewController.swift in Sources */,
+				A5A5ADEB2A117F5F00181467 /* AccountSummaryViewController+Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +359,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5A5ADE02A10213300181467 /* CurrencyFormatterTest.swift in Sources */,
+				A5A5ADE02A10213300181467 /* CurrencyFormatterTests.swift in Sources */,
+				A5EA9A962A12C7BC0098B831 /* AccountTests.swift in Sources */,
+				A5EA9A942A12C7960098B831 /* ProfileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
